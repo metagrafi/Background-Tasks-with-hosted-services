@@ -1,0 +1,67 @@
+Start by opening CacheExp solution
+
+At Solution->CacheExp data folder you may find the script for the local db creation.
+
+CREATE DATABASE iNikitz ON (
+  NAME='iNikitz', 
+  FILENAME='your\path\CacheExp\CacheExp\data\iNikitz.mdf')
+
+I created 2 tables
+
+CREATE TABLE [dbo].[IPProfiles] (
+    [IP]        NVARCHAR (50) NOT NULL,
+    [City]      NVARCHAR (50) NULL,
+    [Country]   NVARCHAR (50) NULL,
+    [Continent] NVARCHAR (50) NULL,
+    [Latitude]  FLOAT (53)    NULL,
+    [Longitude] FLOAT (53)    NULL,
+    PRIMARY KEY CLUSTERED ([IP] ASC)
+);
+CREATE TABLE [dbo].[Works] (
+    [Id]               NVARCHAR (50) NOT NULL,
+    [TotalActions]     INT           NULL,
+    [CompletedActions] INT           NULL,
+    [FailedActions]    INT           NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+The connection string is at appsettings.json
+"ConnectionStrings": {
+    "DefaultConnection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=iNikitz;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+  }
+  
+use PostMan or other to perform a GET
+
+	curl -X GET \
+  https://localhost:44361/api/Details/37.99.197.126 \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: c7b82a04-1154-4a9f-abbb-4aeb3e6b56ff'
+  
+ And for the queued jobs the POST
+ 
+  curl -X POST \
+  https://localhost:44361/api/Details \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: b5227be8-d726-c387-f4e8-fb9e04fe7f94' \
+  -d '[
+	"37.99.197.126",
+	"37.99.197.127",
+	"37.99.197.128",
+	"37.99.197.129",
+	"37.99.197.130",
+	"37.99.197.131",
+	"37.99.197.132",
+	"37.99.197.133",
+	"37.99.197.134",
+	"37.99.197.135",
+	"37.99.197.136",
+	"37.99.197.137",
+	"37.99.197.138",
+	"37.99.197.139",
+	"37.99.197.140",
+	"37.99.197.141",
+	"37.99.197.142",
+	"37.99.197.143",
+	"37.99.197.144",
+	"37.99.197.145"]

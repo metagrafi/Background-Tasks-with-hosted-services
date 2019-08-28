@@ -19,3 +19,4 @@ C:\Users\nikitas.sotiropoulos\source\repos\ATC\ClassLibrary\ClassLibrary\obj\Deb
 C:\Users\nikitas.sotiropoulos\source\repos\ATC\ClassLibrary\ClassLibrary\obj\Debug\netcoreapp2.1\ClassLibrary.AssemblyInfo.cs
 C:\Users\nikitas.sotiropoulos\source\repos\ATC\ClassLibrary\ClassLibrary\obj\Debug\netcoreapp2.1\ClassLibrary.dll
 C:\Users\nikitas.sotiropoulos\source\repos\ATC\ClassLibrary\ClassLibrary\obj\Debug\netcoreapp2.1\ClassLibrary.pdb
+C:\Users\nikitas.sotiropoulos\source\repos\ATC\ClassLibrary\ClassLibrary\obj\Debug\netcoreapp2.1\ClassLibrary.csprojAssemblyReference.cache
